@@ -144,7 +144,8 @@ export class ApnsClient extends EventEmitter {
 
     const claims = {
       iss: this.team,
-      iat: Math.floor(Date.now() / 1000)
+      // round down to the nearest half hour to make it easy for multiple clients to be in sync
+      iat: Math.floor(Date.now() / 1000 / 1800) * 1800
     }
 
     const signer = createSigner({
