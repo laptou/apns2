@@ -41,6 +41,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "prepare": "tsc",
     "lint": "biome ci src test",
     "lint:format": "biome format --write src test",
     "lint:check": "biome check --apply-unsafe src test",
